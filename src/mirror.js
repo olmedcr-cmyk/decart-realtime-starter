@@ -110,7 +110,8 @@ export class Mirror {
     //    viewer sees is already transformed (no flash of the raw camera).
     this.cb.onState("connecting");
     const wantsFast = opts.fast && model.supportedSpeeds?.includes("fast");
-    this.#session = await client.realtime.connect(this.#camera, {
+    this.#session = await client.realtime
+      .connect(this.#camera, {
       model,
       mirror: "auto",
       resolution: opts.resolution,
@@ -126,7 +127,16 @@ export class Mirror {
       onCapacityWait: ({ retryAfterMs }) =>
         this.cb.onNotice(`Decart is busy. Retrying in ${Math.round(retryAfterMs / 1000)} s.`),
       onQueuePosition: ({ position, queueSize }) => this.cb.onNotice(`In queue: ${position} of ${queueSize}.`),
-    });
+      })
+      .catch((/** @type {unknown} */ e) => {
+        // When the server closes the session during the handshake (no credits,
+        // a policy refusal), connect() only reports a generic stale attempt.
+        const msg = e && typeof e === "object" && "message" in e ? String(e.message) : String(e);
+        if (/stale connect/i.test(msg)) {
+          throw new Error("Decart closed the session while connecting. Check your credits and model access, then try again.");
+        }
+        throw e;
+      });
 
     const session = this.#session;
     session.on("generationTick", ({ seconds }) => {

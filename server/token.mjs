@@ -29,6 +29,28 @@ const RATE_LIMIT = { requests: 10, windowMs: 60_000 };
 /** @type {Map<string, number[]>} */
 const hits = new Map();
 
+// A session on an empty account is refused while connecting, and the browser
+// only sees a generic close. Checking the balance here turns that into a clear
+// message. Cached briefly so it does not slow down every connect.
+const CREDITS_URL = "https://api.decart.ai/v1/credits";
+const CREDITS_CACHE_MS = 30_000;
+/** @type {{ at: number, credits: number | null }} */
+let creditsCache = { at: 0, credits: null };
+
+/** @param {string} apiKey @returns {Promise<number | null>} null when unknown */
+async function creditBalance(apiKey) {
+  if (Date.now() - creditsCache.at < CREDITS_CACHE_MS) return creditsCache.credits;
+  try {
+    const res = await fetch(CREDITS_URL, { headers: { "x-api-key": apiKey }, signal: AbortSignal.timeout(3000) });
+    const data = res.ok ? await res.json() : null;
+    const credits = typeof data?.credits === "number" ? data.credits : null;
+    creditsCache = { at: Date.now(), credits };
+    return credits;
+  } catch {
+    return null; // never block a session because the balance check failed
+  }
+}
+
 /** @param {string} ip */
 function isRateLimited(ip) {
   const now = Date.now();
@@ -64,6 +86,14 @@ export async function createRealtimeToken(req) {
   }
   if (isRateLimited(req.ip)) {
     return { status: 429, body: { error: "Too many token requests. Try again in a minute." } };
+  }
+
+  const credits = await creditBalance(req.apiKey);
+  if (credits !== null && credits <= 0) {
+    return {
+      status: 402,
+      body: { error: "Your Decart account has no credits left. Add credits at platform.decart.ai and try again." },
+    };
   }
 
   const requested =

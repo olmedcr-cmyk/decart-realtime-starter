@@ -160,7 +160,7 @@ From Decart's prompting guides, plus what worked for us.
 - Cap every session twice. On the token (`maxSessionDuration`) and in the app (the starter stops at "max seconds").
 - Disconnect when the tab is hidden or the page closes. The starter does both.
 - An installation with a queue is a burn-rate problem. In Milan we cut each transformation to six seconds, then let the mirror rest. 2,600 transformations cost far less than one long open stream per pedestal.
-- `insufficient_credits` ends a session. Watch your balance (`GET /v1/credits`) before an event.
+- `insufficient_credits` ends a session, and an empty account is refused while connecting, before any frame. Watch your balance (`GET /v1/credits` with an `x-api-key` header) before an event. The starter's token server checks it and tells the user.
 
 ## 11 Installations and kiosks
 
@@ -184,6 +184,7 @@ What six days of public use taught us.
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `TOKEN_EXPIRED` on connect | Token minted too early | Use `apiKeyProvider`, mint right before connect |
+| `Stale connect attempt` right after connecting | The server closed the session during the handshake, most often `Insufficient credits` (visible in the console) | Add credits. The starter's token server checks `GET /v1/credits` first and says so |
 | Connects, then video freezes | UDP blocked on the network | Try another network, check ports in 09 |
 | First frames show the raw camera | No `initialState` | Send prompt and image with `connect()` |
 | Prompt change drops the image | `set()` replaces the state | Send prompt and image together, or use `setPrompt()` |
