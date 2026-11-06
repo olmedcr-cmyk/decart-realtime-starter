@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-labelledby="t d">
+<title id="t">Client token flow</title>
+<desc id="d">Animated sequence. The browser asks your server for a token, the server mints a short-lived token with Decart using the permanent key, returns it, and the browser opens the realtime session with it.</desc>
+<style>
+svg{--bg:#FFFFFF;--ink:#30302E;--txt:#3B3B3B;--sec:#474747;--line:#C6C5C0;--draw:#8A8984;--soft:#E7E6E1}
+@media (prefers-color-scheme:dark){
+ svg{--bg:#000000;--ink:#F2F2F2;--txt:#E7E6E1;--sec:#C6C5C0;--line:#474747;--draw:#8A8984;--soft:#30302E}
+}
+.bg{fill:var(--bg)} .ink{fill:var(--ink)} .txt{fill:var(--txt)} .sec{fill:var(--sec)}
+.ln{stroke:var(--line);stroke-width:1;fill:none}
+.lnk{stroke:var(--ink);stroke-width:1;fill:none}
+.gr{stroke:var(--draw);stroke-width:1;fill:none}
+.dash{stroke-dasharray:3 4}
+.mono{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em}
+.mono-s{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.04em}
+.cap{text-transform:uppercase}
+.h1{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:-.02em}
+.h2{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:-.01em}
+.h3{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px}
+.end{text-anchor:end} .mid{text-anchor:middle}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important} }
+
+.st0{animation:st0 12s linear infinite}
+@keyframes st0{0%,0.00%{opacity:.3}1.00%,22.00%{opacity:1}26.00%,100%{opacity:.3}}
+.dt0{offset-path:path('M150,206 L480,206');offset-rotate:0deg;animation:dt0 12s linear infinite}
+@keyframes dt0{0%,0.00%{offset-distance:0%;opacity:0}0.50%{opacity:1}18.00%{offset-distance:100%;opacity:1}18.50%,100%{offset-distance:100%;opacity:0}}
+.st1{animation:st1 12s linear infinite}
+@keyframes st1{0%,21.00%{opacity:.3}23.00%,44.00%{opacity:1}48.00%,100%{opacity:.3}}
+.dt1{offset-path:path('M480,250 L810,250');offset-rotate:0deg;animation:dt1 12s linear infinite}
+@keyframes dt1{0%,22.00%{offset-distance:0%;opacity:0}22.50%{opacity:1}40.00%{offset-distance:100%;opacity:1}40.50%,100%{offset-distance:100%;opacity:0}}
+.st2{animation:st2 12s linear infinite}
+@keyframes st2{0%,43.00%{opacity:.3}45.00%,66.00%{opacity:1}70.00%,100%{opacity:.3}}
+.dt2{offset-path:path('M810,294 L150,294');offset-rotate:0deg;animation:dt2 12s linear infinite}
+@keyframes dt2{0%,44.00%{offset-distance:0%;opacity:0}44.50%{opacity:1}62.00%{offset-distance:100%;opacity:1}62.50%,100%{offset-distance:100%;opacity:0}}
+.st3{animation:st3 12s linear infinite}
+@keyframes st3{0%,65.00%{opacity:.3}67.00%,96.00%{opacity:1}100.00%,100%{opacity:.3}}
+.dt3{offset-path:path('M150,346 L810,346');offset-rotate:0deg;animation:dt3 12s linear infinite}
+@keyframes dt3{0%,66.00%{offset-distance:0%;opacity:0}66.50%{opacity:1}92.00%{offset-distance:100%;opacity:1}92.50%,100%{offset-distance:100%;opacity:0}}</style>
+<rect class="bg" width="960" height="480"/>
+<text class="mono cap sec" x="40" y="40">Client tokens</text>
+<text class="mono cap sec end" x="920" y="40">Security</text>
+<line class="ln" x1="40" y1="52" x2="920" y2="52"/>
+<text class="h1 ink" x="40" y="96">Your API key never reaches the browser</text>
+<line class="ln" x1="40" y1="128" x2="260" y2="128"/>
+<text class="mono-s cap sec mid" x="150" y="148">Browser</text>
+<text class="mono-s txt mid" x="150" y="164">your page</text>
+<line class="gr dash" x1="150" y1="176" x2="150" y2="372"/>
+<line class="ln" x1="370" y1="128" x2="590" y2="128"/>
+<text class="mono-s cap sec mid" x="480" y="148">Your server</text>
+<text class="mono-s txt mid" x="480" y="164">/api/realtime-token</text>
+<line class="gr dash" x1="480" y1="176" x2="480" y2="372"/>
+<line class="ln" x1="700" y1="128" x2="920" y2="128"/>
+<text class="mono-s cap sec mid" x="810" y="148">Decart</text>
+<text class="mono-s txt mid" x="810" y="164">platform + realtime</text>
+<line class="gr dash" x1="810" y1="176" x2="810" y2="372"/>
+<circle class="lnk" cx="428" cy="396" r="7"/>
+<line class="lnk" x1="435" y1="396" x2="460" y2="396"/>
+<line class="lnk" x1="452" y1="396" x2="452" y2="403"/>
+<line class="lnk" x1="458" y1="396" x2="458" y2="401"/>
+<text class="mono-s txt" x="472" y="400">DECART_API_KEY stays here</text>
+
+<g class="st0">
+ <line class="gr" x1="150" y1="206" x2="480" y2="206" style=""/>
+ <path class="lnk" d="M474,202 L480,206 L474,210" style=""/>
+ <text class="mono-s ink mid" x="315.0" y="198">01 · POST { model }</text>
+ <text class="mono-s sec mid" x="315.0" y="222">when the user clicks Start</text>
+</g>
+<circle class="dt0 ink" r="3.5" cx="0" cy="0"/>
+<g class="st1">
+ <line class="gr" x1="480" y1="250" x2="810" y2="250" style=""/>
+ <path class="lnk" d="M804,246 L810,250 L804,254" style=""/>
+ <text class="mono-s ink mid" x="645.0" y="242">02 · tokens.create()</text>
+ <text class="mono-s sec mid" x="645.0" y="266">60 s · one model · this origin · session cap</text>
+</g>
+<circle class="dt1 ink" r="3.5" cx="0" cy="0"/>
+<g class="st2">
+ <line class="gr" x1="810" y1="294" x2="150" y2="294" style=""/>
+ <path class="lnk" d="M156,290 L150,294 L156,298" style=""/>
+ <text class="mono-s ink mid" x="315.0" y="286">03 · short-lived apiKey</text>
+ <text class="mono-s sec mid" x="315.0" y="310">the permanent key never leaves your server</text>
+</g>
+<circle class="dt2 ink" r="3.5" cx="0" cy="0"/>
+<g class="st3">
+ <line class="gr" x1="150" y1="346" x2="810" y2="346" style="stroke:var(--ink);stroke-width:1.5"/>
+ <path class="lnk" d="M804,342 L810,346 L804,350" style="stroke:var(--ink);stroke-width:1.5"/>
+ <text class="mono-s ink mid" x="480.0" y="338">04 · realtime.connect(camera, { model })</text>
+ <text class="mono-s sec mid" x="480.0" y="362">WebRTC session opened with the token</text>
+</g>
+<circle class="dt3 ink" r="3.5" cx="0" cy="0"/><line class="ln" x1="40" y1="440" x2="920" y2="440"/>
+<text class="mono sec" x="40" y="464">apiKeyProvider asks for a fresh token before every connect and reconnect.</text>
+</svg>

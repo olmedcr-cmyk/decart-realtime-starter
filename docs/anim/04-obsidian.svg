@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" role="img" aria-labelledby="t d">
+<title id="t">Obsidian Reflections case study</title>
+<desc id="d">Animated timeline in six stations, from the legend of La Llorona in Xochimilco to 2,600 generations at Base Milano.</desc>
+<style>
+svg{--bg:#FFFFFF;--ink:#30302E;--txt:#3B3B3B;--sec:#474747;--line:#C6C5C0;--draw:#8A8984;--soft:#E7E6E1}
+@media (prefers-color-scheme:dark){
+ svg{--bg:#000000;--ink:#F2F2F2;--txt:#E7E6E1;--sec:#C6C5C0;--line:#474747;--draw:#8A8984;--soft:#30302E}
+}
+.bg{fill:var(--bg)} .ink{fill:var(--ink)} .txt{fill:var(--txt)} .sec{fill:var(--sec)}
+.ln{stroke:var(--line);stroke-width:1;fill:none}
+.lnk{stroke:var(--ink);stroke-width:1;fill:none}
+.gr{stroke:var(--draw);stroke-width:1;fill:none}
+.dash{stroke-dasharray:3 4}
+.mono{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em}
+.mono-s{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.04em}
+.cap{text-transform:uppercase}
+.h1{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:-.02em}
+.h2{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:-.01em}
+.h3{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px}
+.end{text-anchor:end} .mid{text-anchor:middle}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important} }
+
+.prog{stroke:var(--ink);stroke-width:1;fill:none;stroke-dasharray:730;stroke-dashoffset:730;animation:prog 18s linear infinite}
+@keyframes prog{0%{stroke-dashoffset:730}80.0%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.dot{animation:dot 18s linear infinite}
+@keyframes dot{0%{transform:translateX(0);opacity:1}80.0%,94%{transform:translateX(730px);opacity:1}100%{transform:translateX(730px);opacity:0}}
+
+.s0{animation:s0 18s linear infinite}
+@keyframes s0{0%,0.00%{opacity:.28}1.20%,94%{opacity:1}100%{opacity:.28}}
+.c0{animation:c0 18s linear infinite}
+@keyframes c0{0%,0.00%{fill:var(--bg)}1.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}
+.s1{animation:s1 18s linear infinite}
+@keyframes s1{0%,15.70%{opacity:.28}17.20%,94%{opacity:1}100%{opacity:.28}}
+.c1{animation:c1 18s linear infinite}
+@keyframes c1{0%,15.70%{fill:var(--bg)}17.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}
+.s2{animation:s2 18s linear infinite}
+@keyframes s2{0%,31.70%{opacity:.28}33.20%,94%{opacity:1}100%{opacity:.28}}
+.c2{animation:c2 18s linear infinite}
+@keyframes c2{0%,31.70%{fill:var(--bg)}33.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}
+.s3{animation:s3 18s linear infinite}
+@keyframes s3{0%,47.70%{opacity:.28}49.20%,94%{opacity:1}100%{opacity:.28}}
+.c3{animation:c3 18s linear infinite}
+@keyframes c3{0%,47.70%{fill:var(--bg)}49.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}
+.s4{animation:s4 18s linear infinite}
+@keyframes s4{0%,63.70%{opacity:.28}65.20%,94%{opacity:1}100%{opacity:.28}}
+.c4{animation:c4 18s linear infinite}
+@keyframes c4{0%,63.70%{fill:var(--bg)}65.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}
+.s5{animation:s5 18s linear infinite}
+@keyframes s5{0%,79.70%{opacity:.28}81.20%,94%{opacity:1}100%{opacity:.28}}
+.c5{animation:c5 18s linear infinite}
+@keyframes c5{0%,79.70%{fill:var(--bg)}81.20%,94%{fill:var(--ink)}100%{fill:var(--bg)}}</style>
+<rect class="bg" width="960" height="380"/>
+<text class="mono cap sec" x="40" y="40">INST-01 | Obsidian Reflections</text>
+<text class="mono cap sec end" x="920" y="40">Case study</text>
+<line class="ln" x1="40" y1="52" x2="920" y2="52"/>
+<text class="h1 ink" x="40" y="96">From a legend to a live mirror</text>
+<line class="ln" x1="40" y1="210" x2="920" y2="210"/>
+<line class="prog" x1="40" y1="210" x2="770" y2="210"/>
+<g class="s0">
+ <text class="mono sec" x="40" y="188">01</text>
+ <text class="h2 ink" x="40" y="250">Xochimilco</text>
+ <text class="mono txt" x="40" y="274">the legend of</text>
+ <text class="mono txt" x="40" y="292">La Llorona</text>
+</g>
+<circle class="c0" cx="40" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<g class="s1">
+ <text class="mono sec" x="186" y="188">02</text>
+ <text class="h2 ink" x="186" y="250">Concept</text>
+ <text class="mono txt" x="186" y="274">three animals</text>
+ <text class="mono txt" x="186" y="292">three black fountains</text>
+</g>
+<circle class="c1" cx="186" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<g class="s2">
+ <text class="mono sec" x="332" y="188">03</text>
+ <text class="h2 ink" x="332" y="250">Pedestals</text>
+ <text class="mono txt" x="332" y="274">400×1000 mm</text>
+ <text class="mono txt" x="332" y="292">moss and flowers</text>
+</g>
+<circle class="c2" cx="332" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<g class="s3">
+ <text class="mono sec" x="478" y="188">04</text>
+ <text class="h2 ink" x="478" y="250">Code</text>
+ <text class="mono txt" x="478" y="274">React + Lucy 2.1</text>
+ <text class="mono txt" x="478" y="292">WebRTC + Netlify</text>
+</g>
+<circle class="c3" cx="478" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<g class="s4">
+ <text class="mono sec" x="624" y="188">05</text>
+ <text class="h2 ink" x="624" y="250">Base Milano</text>
+ <text class="mono txt" x="624" y="274">April 21–26, 2026</text>
+ <text class="mono txt" x="624" y="292">rewritten nightly</text>
+</g>
+<circle class="c4" cx="624" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<g class="s5">
+ <text class="mono sec" x="770" y="188">06</text>
+ <text class="h2 ink" x="770" y="250">Grazie Milano</text>
+ <text class="mono txt" x="770" y="274">2,600 generations</text>
+ <text class="mono txt" x="770" y="292">in six days</text>
+</g>
+<circle class="c5" cx="770" cy="210" r="4.5" style="stroke:var(--ink)"/>
+<circle class="dot ink" cx="40" cy="210" r="6"/><line class="ln" x1="40" y1="340" x2="920" y2="340"/>
+<text class="mono sec" x="40" y="364">Milan Design Week 2026 · We Will Design · Base Milano · Divina Machina × Decart</text>
+</svg>

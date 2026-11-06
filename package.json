@@ -1,0 +1,26 @@
+{
+  "name": "decart-realtime-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A realtime AI video mirror built on Decart's Lucy models. Camera in, transformed video out, with secure client tokens, quality controls and a live cost meter.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "typecheck": "tsc -p jsconfig.json",
+    "anim": "python3 docs/anim/build.py"
+  },
+  "dependencies": {
+    "@decartai/sdk": "^0.2.14"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "5.9.3",
+    "vite": "8.3.4"
+  }
+}

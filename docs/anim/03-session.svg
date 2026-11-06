@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" role="img" aria-labelledby="t d">
+<title id="t">Session lifecycle</title>
+<desc id="d">Animated timeline of one session. Preflight, fresh token, camera at the model's size, connect with the first state, billed generation with a cost bar, and disconnect.</desc>
+<style>
+svg{--bg:#FFFFFF;--ink:#30302E;--txt:#3B3B3B;--sec:#474747;--line:#C6C5C0;--draw:#8A8984;--soft:#E7E6E1}
+@media (prefers-color-scheme:dark){
+ svg{--bg:#000000;--ink:#F2F2F2;--txt:#E7E6E1;--sec:#C6C5C0;--line:#474747;--draw:#8A8984;--soft:#30302E}
+}
+.bg{fill:var(--bg)} .ink{fill:var(--ink)} .txt{fill:var(--txt)} .sec{fill:var(--sec)}
+.ln{stroke:var(--line);stroke-width:1;fill:none}
+.lnk{stroke:var(--ink);stroke-width:1;fill:none}
+.gr{stroke:var(--draw);stroke-width:1;fill:none}
+.dash{stroke-dasharray:3 4}
+.mono{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em}
+.mono-s{font-family:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.04em}
+.cap{text-transform:uppercase}
+.h1{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;letter-spacing:-.02em}
+.h2{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:-.01em}
+.h3{font-family:'Bricolage Grotesque','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px}
+.end{text-anchor:end} .mid{text-anchor:middle}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important} }
+
+.ph{animation:ph 20s linear infinite}
+@keyframes ph{0%{transform:translateX(0)}95.0%,100%{transform:translateX(840px)}}
+
+.a0{animation:a0 20s linear infinite}
+@keyframes a0{0%,0.00%{opacity:0}0.01%,13.57%{opacity:1}13.58%,100%{opacity:0}}
+.t0{animation:t0 20s linear infinite}
+@keyframes t0{0%,0.00%{opacity:.4}0.01%,13.57%{opacity:1}13.58%,100%{opacity:.4}}
+.a1{animation:a1 20s linear infinite}
+@keyframes a1{0%,13.56%{opacity:0}13.58%,24.88%{opacity:1}24.89%,100%{opacity:0}}
+.t1{animation:t1 20s linear infinite}
+@keyframes t1{0%,13.56%{opacity:.4}13.58%,24.88%{opacity:1}24.89%,100%{opacity:.4}}
+.a2{animation:a2 20s linear infinite}
+@keyframes a2{0%,24.87%{opacity:0}24.89%,40.71%{opacity:1}40.72%,100%{opacity:0}}
+.t2{animation:t2 20s linear infinite}
+@keyframes t2{0%,24.87%{opacity:.4}24.89%,40.71%{opacity:1}40.72%,100%{opacity:.4}}
+.a3{animation:a3 20s linear infinite}
+@keyframes a3{0%,40.70%{opacity:0}40.72%,54.29%{opacity:1}54.30%,100%{opacity:0}}
+.t3{animation:t3 20s linear infinite}
+@keyframes t3{0%,40.70%{opacity:.4}40.72%,54.29%{opacity:1}54.30%,100%{opacity:.4}}
+.a4{animation:a4 20s linear infinite}
+@keyframes a4{0%,54.28%{opacity:0}54.30%,81.43%{opacity:1}81.44%,100%{opacity:0}}
+.t4{animation:t4 20s linear infinite}
+@keyframes t4{0%,54.28%{opacity:.4}54.30%,81.43%{opacity:1}81.44%,100%{opacity:.4}}
+.a5{animation:a5 20s linear infinite}
+@keyframes a5{0%,81.42%{opacity:0}81.44%,95.00%{opacity:1}95.01%,100%{opacity:0}}
+.t5{animation:t5 20s linear infinite}
+@keyframes t5{0%,81.42%{opacity:.4}81.44%,95.00%{opacity:1}95.01%,100%{opacity:.4}}
+.bar{transform-box:fill-box;transform-origin:left;animation:bar 20s linear infinite}
+@keyframes bar{0%,54.29%{transform:scaleX(0)}81.43%,100%{transform:scaleX(1)}}</style>
+<rect class="bg" width="960" height="360"/>
+<text class="mono cap sec" x="40" y="40">One session</text>
+<text class="mono cap sec end" x="920" y="40">Lifecycle</text>
+<line class="ln" x1="40" y1="52" x2="920" y2="52"/>
+<text class="h1 ink" x="40" y="96">From click to bill, in the order the starter runs it</text>
+<rect class="ln" x="60" y="128" width="120" height="92"/>
+<line class="a0" x1="60" y1="128" x2="180" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t0">
+ <text class="mono-s sec" x="70" y="150">preflight</text>
+ <text class="h3 ink" x="70" y="178">Network check</text>
+</g>
+<text class="mono-s sec" x="70" y="242">free, no session</text>
+<rect class="ln" x="180" y="128" width="100" height="92"/>
+<line class="a1" x1="180" y1="128" x2="280" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t1">
+ <text class="mono-s sec" x="190" y="150">token</text>
+ <text class="h3 ink" x="190" y="178">Fresh token</text>
+</g>
+<text class="mono-s sec" x="190" y="242">60 s life</text>
+<rect class="ln" x="280" y="128" width="140" height="92"/>
+<line class="a2" x1="280" y1="128" x2="420" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t2">
+ <text class="mono-s sec" x="290" y="150">camera</text>
+ <text class="h3 ink" x="290" y="178">Model's size</text>
+</g>
+<text class="mono-s sec" x="290" y="242">1280×720 · 30 fps</text>
+<rect class="ln" x="420" y="128" width="120" height="92"/>
+<line class="a3" x1="420" y1="128" x2="540" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t3">
+ <text class="mono-s sec" x="430" y="150">connect</text>
+ <text class="h3 ink" x="430" y="178">First state</text>
+</g>
+<text class="mono-s sec" x="430" y="242">prompt + image</text>
+<rect class="ln" x="540" y="128" width="240" height="92"/>
+<line class="a4" x1="540" y1="128" x2="780" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t4">
+ <text class="mono-s sec" x="550" y="150">generating</text>
+ <text class="h3 ink" x="550" y="178">Billed seconds</text>
+</g>
+<text class="mono-s sec" x="550" y="242">$0.02/s on Lucy 2.6</text>
+<rect class="ln" x="780" y="128" width="120" height="92"/>
+<line class="a5" x1="780" y1="128" x2="900" y2="128" style="stroke:var(--ink);stroke-width:3"/>
+<g class="t5">
+ <text class="mono-s sec" x="790" y="150">stop</text>
+ <text class="h3 ink" x="790" y="178">Disconnect</text>
+</g>
+<text class="mono-s sec" x="790" y="242">cap or Stop</text>
+<rect class="ln" x="550" y="194" width="220" height="8"/>
+<rect class="ink bar" x="550" y="194" width="220" height="8"/>
+<text class="mono-s sec" x="550" y="260">60 s ≈ $1.20 · fast mode ×2</text><line class="ph" x1="60" y1="118" x2="60" y2="226" style="stroke:var(--ink);stroke-width:1.5"/><circle class="ph ink" cx="60" cy="118" r="3.5"/><line class="ln" x1="40" y1="320" x2="920" y2="320"/>
+<text class="mono sec" x="40" y="344">Only generating seconds are billed. The starter stops on a cap, a hidden tab or a closed page.</text>
+</svg>

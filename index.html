@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Realtime Mirror</title>
+    <meta name="description" content="A realtime AI video mirror built on Decart's Lucy models." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400&family=Roboto+Mono:wght@300;400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <span class="label">Realtime Mirror</span>
+      <span class="label muted">Decart Lucy · starter</span>
+    </header>
+
+    <main class="layout">
+      <section class="stage" aria-label="Video">
+        <video id="output" class="output" autoplay playsinline muted></video>
+        <video id="camera" class="camera" autoplay playsinline muted aria-label="Your camera"></video>
+        <div id="overlay" class="overlay">
+          <p class="overlay-title">Look into the mirror.</p>
+          <p class="label muted">Choose a model and a prompt, then start.</p>
+        </div>
+        <div class="hud" aria-live="polite">
+          <span><span class="label muted">state</span> <b id="hud-state">idle</b></span>
+          <span><span class="label muted">quality</span> <b id="hud-quality">–</b></span>
+          <span><span class="label muted">latency</span> <b id="hud-latency">–</b></span>
+          <span><span class="label muted">output</span> <b id="hud-output">–</b></span>
+          <span><span class="label muted">time</span> <b id="hud-time">0 s</b></span>
+          <span><span class="label muted">cost</span> <b id="hud-cost">$0.00</b></span>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="cell">
+          <span class="label idx">01 · model</span>
+          <select id="model" aria-label="Model"></select>
+          <p id="model-use" class="note"></p>
+        </div>
+
+        <div class="cell">
+          <span class="label idx">02 · prompt</span>
+          <div id="presets" class="chips"></div>
+          <textarea id="prompt" rows="4" aria-label="Prompt"></textarea>
+          <div class="row">
+            <label class="check"><input id="enhance" type="checkbox" checked /> enhance</label>
+            <span id="count" class="label muted"></span>
+          </div>
+          <p class="note">Lead with a verb. Substitute, Add, Swap, Set the background, Restyle. Edits apply live.</p>
+        </div>
+
+        <div class="cell">
+          <span class="label idx">03 · reference image</span>
+          <input id="image" type="file" accept="image/jpeg,image/png,image/webp" aria-label="Reference image" />
+          <div id="image-preview" class="thumb" hidden><img alt="Reference" /><button id="image-clear" class="link" type="button">remove</button></div>
+          <p id="image-hint" class="note"></p>
+        </div>
+
+        <div class="cell">
+          <span class="label idx">04 · quality</span>
+          <div class="grid2">
+            <label>resolution
+              <select id="resolution"><option value="720p">720p</option><option value="1080p">1080p where supported</option></select>
+            </label>
+            <label>codec
+              <select id="codec"><option value="auto">auto</option><option value="h264">h264</option><option value="vp8">vp8</option><option value="vp9">vp9</option></select>
+            </label>
+            <label>orientation
+              <select id="orientation"><option value="landscape">landscape</option><option value="portrait">portrait</option></select>
+            </label>
+            <label>max seconds
+              <input id="max" type="number" min="10" max="600" step="10" value="60" />
+            </label>
+          </div>
+          <label class="check"><input id="fast" type="checkbox" /> fast mode · lower latency, 2× price</label>
+          <label class="check"><input id="audio" type="checkbox" /> send voice · synced audio back</label>
+        </div>
+
+        <div class="cell actions">
+          <button id="start" class="cta" type="button">Start mirror</button>
+          <button id="stop" class="cta ghost" type="button" disabled>Stop</button>
+          <p id="notice" class="note" role="status"></p>
+        </div>
+
+        <footer class="cell credits">
+          <span class="label muted">built on <a href="https://decart.ai">Decart</a> · by <a href="https://github.com/olmedcr-cmyk/decart-realtime-starter">Divina Machina</a></span>
+        </footer>
+      </aside>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
